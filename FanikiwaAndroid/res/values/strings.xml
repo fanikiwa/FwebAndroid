@@ -11,8 +11,6 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="action_search">Search</string>
     <string name="action_example">Example action</string>
-    <string name="action_get_a_loan">Get a Loan</string>
-    <string name="action_make_an_investment">Make an Investment</string>
 
     <!-- Quotes -->
     <string name="lblListQuotes">List Quotes</string>
@@ -51,8 +49,6 @@
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="surname">SurName</string>
-
-    <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -63,14 +59,16 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="telephone">Telephone</string>
 
-    <!-- Quotes -->
+    <!-- Offers -->
     <string name="offer_description">Description</string>
     <string name="btnCancel">Cancel</string>
     <string name="btnMakeOFfer">Create</string>
     <string name="offer_Amount">Amount</string>
     <string name="offer_OfferType">Offer Type</string>
     <string name="offer_PublicOffer">Public Offer</string>
+    <string name="telephone">Telephone</string>
+    <string name="action_get_a_loan">Get a Loan</string>
+    <string name="action_make_an_investment">Make an Investment</string>
 
 </resources>

@@ -16,7 +16,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@layout/header_gradient"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingBottom="5dip"
             android:paddingTop="5dip" >
 
@@ -25,8 +25,17 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="left"
                 android:layout_marginLeft="10dip"
                 android:src="@drawable/fanikiwa_logo" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dip"
+                android:src="@drawable/sp_logo" />
+
             <!-- Logo Ends -->
         </LinearLayout>
         <!-- Header Ends -->
@@ -41,7 +50,7 @@
             android:orientation="vertical"
             android:padding="10dip" >
 
-            <!-- Full Name Label -->
+            <!-- Description Label -->
 
             <TextView
                 android:layout_width="fill_parent"
@@ -57,41 +66,8 @@
                 android:layout_marginTop="5dip"
                 android:singleLine="true"
                 android:textColor="#372c24" />
-            <!-- Email Label -->
 
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/offer_PublicOffer"
-                android:textColor="#372c24" />
-
-            <Spinner
-                android:id="@+id/offer_PublicOffer"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dip"
-                android:layout_marginTop="5dip"
-                android:singleLine="true"
-                android:textColor="#372c24" />
-
-            <!-- Password Label -->
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/offer_OfferType"
-                android:textColor="#372c24" />
-
-            <EditText
-                android:id="@+id/offer_OfferType"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dip"
-                android:password="true"
-                android:singleLine="true"
-                android:textColor="#372c24" />
-
-            <!-- Telephone Label -->
+            <!-- Amount Label -->
 
             <TextView
                 android:layout_width="fill_parent"
@@ -108,12 +84,46 @@
                 android:singleLine="true"
                 android:textColor="#372c24" />
 
+            <!-- PublicOffer Label -->
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/offer_PublicOffer"
+                android:textColor="#372c24" />
+
+            <Spinner
+                android:id="@+id/offer_PublicOffer"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="5dip"
+                android:singleLine="true"
+                android:textColor="#372c24" />
+
+            <!-- OfferType Label -->
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/offer_OfferType"
+                android:textColor="#372c24" />
+
+            <Spinner
+                android:id="@+id/offer_OfferType"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="5dip"
+                android:singleLine="true"
+                android:textColor="#372c24" />
+
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
-                <!-- Register button Start -->
+                <!-- Create button Start -->
 
                 <Button
                     android:id="@+id/btnMakeOFfer"
@@ -122,10 +132,10 @@
                     android:layout_gravity="left"
                     android:layout_weight="1"
                     android:text="@string/btnMakeOFfer" />
-                <!-- Register button Start -->
+                <!-- Create button Ends -->
 
 
-                <!-- Link to Login Screen Start -->
+                <!-- Cancel button Start -->
 
                 <Button
                     android:id="@+id/btnCancel"
@@ -134,7 +144,7 @@
                     android:layout_gravity="right"
                     android:layout_weight="1"
                     android:text="@string/btnCancel" />
-                <!-- Link to Login Screen Start -->
+                <!-- Cancel button Ends -->
             </LinearLayout>
         </LinearLayout>
         <!-- Registration Form Ends -->

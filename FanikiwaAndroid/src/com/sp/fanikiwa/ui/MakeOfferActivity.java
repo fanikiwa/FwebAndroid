@@ -23,15 +23,13 @@ import com.google.api.client.json.gson.GsonFactory;
 import com.sp.fanikiwa.ui.R;
 import com.sp.fanikiwa.entity.offerendpoint.Offerendpoint;
 import com.sp.fanikiwa.entity.offerendpoint.model.Offer;
-import com.sp.fanikiwa.entity.quoteEndpoint.QuoteEndpoint;
 import com.sp.fanikiwa.entity.quoteEndpoint.model.Quote;
 
-public class MakeOfferActivity extends Activity implements
-		OnItemSelectedListener {
+public class MakeOfferActivity extends Activity  {
 
 	EditText txtDescription;
-	Spinner cboPublicOffer;
-	Spinner cboOfferType;
+//	Spinner cboPublicOffer;
+//	Spinner cboOfferType;
 	EditText txtAmount;
 
 	@Override
@@ -39,39 +37,41 @@ public class MakeOfferActivity extends Activity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.create_offer);
 
-		ArrayList<String> offertypes = new ArrayList<String>();
-		offertypes.add("Lend");
-		offertypes.add("Borrow");
-		ArrayList<String> publicoffers = new ArrayList<String>();
-		publicoffers.add("Public");
-		publicoffers.add("Private"); 
+//		ArrayList<String> offertypes = new ArrayList<String>();
+//		offertypes.add("Lend");
+//		offertypes.add("Borrow");
+//		ArrayList<String> publicoffers = new ArrayList<String>();
+//		publicoffers.add("Public");
+//		publicoffers.add("Private");
 		txtDescription = (EditText) findViewById(R.id.offer_description);
 		txtAmount = (EditText) findViewById(R.id.offer_Amount);
-		cboPublicOffer = (Spinner) findViewById(R.id.offer_PublicOffer);
+//		cboPublicOffer = (Spinner) findViewById(R.id.offer_PublicOffer);
 		// Creating adapter for spinner
-        ArrayAdapter<String> publicoffersdataAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, publicoffers);
+		// ArrayAdapter<String> publicoffersdataAdapter = new
+		// ArrayAdapter<String>(this,
+		// android.R.layout.simple_spinner_item, publicoffers);
+		//
+		// // Drop down layout style - list view with radio button
+		// publicoffersdataAdapter
+		// .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		//
+		// // attaching data adapter to spinner
+		// cboPublicOffer.setAdapter(publicoffersdataAdapter);
+		// cboPublicOffer.setOnItemSelectedListener(this);
 
-        // Drop down layout style - list view with radio button
-        publicoffersdataAdapter
-                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
-        cboPublicOffer.setAdapter(publicoffersdataAdapter);
-        cboPublicOffer.setOnItemSelectedListener(this);
- 
-		cboOfferType = (Spinner) findViewById(R.id.offer_OfferType);
-		// Creating adapter for spinner
-        ArrayAdapter<String> offertypesdataAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, offertypes);
-
-        // Drop down layout style - list view with radio button
-        offertypesdataAdapter
-                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
-        cboOfferType.setAdapter(offertypesdataAdapter);
-        cboOfferType.setOnItemSelectedListener(this);
+//		cboOfferType = (Spinner) findViewById(R.id.offer_OfferType);
+		// // Creating adapter for spinner
+		// ArrayAdapter<String> offertypesdataAdapter = new
+		// ArrayAdapter<String>(this,
+		// android.R.layout.simple_spinner_item, offertypes);
+		//
+		// // Drop down layout style - list view with radio button
+		// offertypesdataAdapter
+		// .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		//
+		// // attaching data adapter to spinner
+		// cboOfferType.setAdapter(offertypesdataAdapter);
+		// cboOfferType.setOnItemSelectedListener(this);
 
 		// Event Listener for About App button
 		Button btnMakeOFfer = (Button) findViewById(R.id.btnMakeOFfer);
@@ -93,19 +93,19 @@ public class MakeOfferActivity extends Activity implements
 					return;
 				}
 
-//				if ((publicoffer.length() == 0)) {
-//					Toast.makeText(MakeOfferActivity.this,
-//							"You need to provide values for Public Offer",
-//							Toast.LENGTH_SHORT).show();
-//					return;
-//				}
-//
-//				if ((offertype.length() == 0)) {
-//					Toast.makeText(MakeOfferActivity.this,
-//							"You need to provide values for Offer Type",
-//							Toast.LENGTH_SHORT).show();
-//					return;
-//				}
+				// if ((publicoffer.length() == 0)) {
+				// Toast.makeText(MakeOfferActivity.this,
+				// "You need to provide values for Public Offer",
+				// Toast.LENGTH_SHORT).show();
+				// return;
+				// }
+				//
+				// if ((offertype.length() == 0)) {
+				// Toast.makeText(MakeOfferActivity.this,
+				// "You need to provide values for Offer Type",
+				// Toast.LENGTH_SHORT).show();
+				// return;
+				// }
 
 				if ((amount.length() == 0)) {
 					Toast.makeText(MakeOfferActivity.this,
@@ -115,7 +115,8 @@ public class MakeOfferActivity extends Activity implements
 				}
 
 				// Go ahead and perform the transaction
-				String[] params = { description, description, description, amount };
+				String[] params = { description, description, description,
+						amount };
 				new MakeOfferAsyncTask(MakeOfferActivity.this).execute(params);
 
 			}
@@ -162,27 +163,12 @@ public class MakeOfferActivity extends Activity implements
 			// Clear the progress dialog and the fields
 			pd.dismiss();
 			txtDescription.setText("");
-			txtDescription.setText("");
-			txtDescription.setText("");
 			txtAmount.setText("");
 
 			// Display success message to user
 			Toast.makeText(getBaseContext(), "Offer created succesfully",
 					Toast.LENGTH_SHORT).show();
 		}
-	}
-
-	@Override
-	public void onItemSelected(AdapterView<?> parent, View view, int position,
-			long id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onNothingSelected(AdapterView<?> parent) {
-		// TODO Auto-generated method stub
-		
 	}
  
 

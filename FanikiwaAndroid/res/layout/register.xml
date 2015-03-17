@@ -102,10 +102,10 @@
                 android:id="@+id/reg_telephone"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dip"
                 android:layout_marginTop="5dip"
-                android:password="true"
                 android:singleLine="true"
-                android:textColor="#372c24" />
+                android:textColor="#372c24"  />
 
            
             <LinearLayout
