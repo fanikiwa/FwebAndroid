@@ -13,8 +13,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!--
      To retrieve OAuth 2.0 tokens or invalidate tokens to disconnect a user. This disconnect
-     option is required to comply with the Google+ Sign-In developer policies
-    -->
+     option is required to comply with the Google+ Sign-In developer policies -->
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <!-- To retrieve the account name (email) as part of sign-in: -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -47,28 +46,27 @@
             android:label="Register New Account"
             android:theme="@android:style/Theme.Translucent" >
         </activity>
-        
-         <!-- Entry for MainActivity.class -->
+
+        <!-- Entry for MainActivity.class -->
         <activity
             android:name=".MainActivity"
-            android:label="Home"
+            android:label="Fanikiwa"
             android:theme="@android:style/Theme.Translucent" >
         </activity>
-        
-         <!-- Entry for AddQuoteActivity.class -->
+
+        <!-- Entry for AddQuoteActivity.class -->
         <activity
             android:name=".AddQuoteActivity"
             android:label="Add Quote"
             android:theme="@android:style/Theme.Translucent" >
         </activity>
-        
+
         <!-- Entry for MakeOfferActivity.class -->
         <activity
             android:name=".MakeOfferActivity"
             android:label="Make an Offer"
             android:theme="@android:style/Theme.Translucent" >
         </activity>
-        
     </application>
 
 </manifest>

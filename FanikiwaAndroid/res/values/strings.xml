@@ -42,32 +42,37 @@
     <string name="confirm_registry">Email not found. You want to create a new user with that email and password?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="register_new_account">Register New Account</string>
-    <string name="already_has_account_login_here">Already has account! Login here</string>
     <string name="new_to_fanikiwa_register_here">New to Fanikiwa? Register here</string>
     <string name="login">Login</string>
     <string name="password">Password</string>
-    <string name="email">Email</string>
-    <string name="surname">SurName</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="plus_sign_out">Switch Google+ account</string>
     <string name="plus_disconnect">Disconnect from Google+</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
+    
+    <!-- Register -->
+    <string name="email">Email</string>
+    <string name="surname">SurName</string>
+    <string name="register_new_account">Register New Account</string>
+    <string name="telephone">Telephone</string>
+    <string name="already_has_account_login_here">Already has account! Login here</string>
 
     <!-- Offers -->
     <string name="offer_description">Description</string>
     <string name="btnCancel">Cancel</string>
     <string name="btnMakeOFfer">Create</string>
     <string name="offer_Amount">Amount</string>
+    <string name="offer_Term">Term</string>
+    <string name="offer_Interest">Interest</string>
+    <string name="offer_partialPay">partial Pay</string>
     <string name="offer_OfferType">Offer Type</string>
     <string name="offer_PublicOffer">Public Offer</string>
-    <string name="telephone">Telephone</string>
     <string name="action_get_a_loan">Get a Loan</string>
     <string name="action_make_an_investment">Make an Investment</string>
 

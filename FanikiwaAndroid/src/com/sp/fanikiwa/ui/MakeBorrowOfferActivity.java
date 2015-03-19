@@ -37,7 +37,7 @@ import com.sp.fanikiwa.entity.offerendpoint.Offerendpoint;
 import com.sp.fanikiwa.entity.offerendpoint.model.Offer;
 import com.sp.fanikiwa.entity.quoteEndpoint.model.Quote;
 
-public class MakeOfferActivity extends Activity {
+public class MakeBorrowOfferActivity extends Activity {
 
 	EditText txtDescription;
 	Spinner cboPublicOffer;
@@ -155,7 +155,7 @@ public class MakeOfferActivity extends Activity {
  
 				// Go ahead and perform the transaction
 				String[] params = { description, amount, interest,  term, offertype, publicoffer, partialpay };
-				new MakeOfferAsyncTask(MakeOfferActivity.this).execute(params);
+				new MakeOfferAsyncTask(MakeBorrowOfferActivity.this).execute(params);
 
 			}
 		});
@@ -276,12 +276,12 @@ public class MakeOfferActivity extends Activity {
 
 			cboPublicOffer
 					.setAdapter(new ArrayAdapter<String>(
-							MakeOfferActivity.this,
+							MakeBorrowOfferActivity.this,
 							android.R.layout.simple_spinner_dropdown_item,
 							publicoffers));
 
 			cboOfferType.setAdapter(new ArrayAdapter<String>(
-					MakeOfferActivity.this,
+					MakeBorrowOfferActivity.this,
 					android.R.layout.simple_spinner_dropdown_item, offertypes));
 
 		}

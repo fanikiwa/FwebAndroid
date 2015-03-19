@@ -66,6 +66,7 @@ public class RegisterActivity extends Activity {
 				// TODO Auto-generated method stub
 
 				txtsurname = (EditText) findViewById(R.id.reg_surname);
+				txtsurname.requestFocus();
 				txtemail = (EditText) findViewById(R.id.reg_email);
 				txtpwd = (EditText) findViewById(R.id.reg_password);
 				txttelephone = (EditText) findViewById(R.id.reg_telephone);

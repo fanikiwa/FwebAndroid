@@ -47,6 +47,7 @@ public class LoginActivity extends Activity {
 				 */
 
 				txtusername = (EditText) findViewById(R.id.txtusername);
+				txtusername.requestFocus();
 				txtpwd = (EditText) findViewById(R.id.txtpwd);
 
 				String username = txtusername.getText().toString().trim();
