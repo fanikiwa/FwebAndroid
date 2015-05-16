@@ -3,11 +3,12 @@ package com.sp.fanikiwa.ui;
 import java.util.Date;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
-import com.google.api.client.json.gson.GsonFactory; 
+import com.google.api.client.json.gson.GsonFactory;
 import com.sp.fanikiwa.entity.memberendpoint.Memberendpoint;
 import com.sp.fanikiwa.entity.memberendpoint.model.Member;
+import com.sp.fanikiwa.entity.memberendpoint.model.MemberDTO;
 import com.sp.fanikiwa.entity.userprofileendpoint.Userprofileendpoint;
-import com.sp.fanikiwa.entity.userprofileendpoint.model.Userprofile; 
+import com.sp.fanikiwa.entity.userprofileendpoint.model.Userprofile;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -17,6 +18,8 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -38,15 +41,9 @@ public class RegisterActivity extends Activity {
 		// Set View to register.xml
 		setContentView(R.layout.register);
 
-		/*
-		 * call registerendpoint save the Memberid, and accounts redirect to
-		 * login
-		 */
-
-		TextView loginScreen = (TextView) findViewById(R.id.link_to_login);
-
-		// Listening to Login Screen link
-		loginScreen.setOnClickListener(new View.OnClickListener() {
+		// Event Listener for Login button
+		Button btnLogin = (Button) findViewById(R.id.btnLogin);
+		btnLogin.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View arg0) {
 				// Closing registration screen
@@ -58,6 +55,7 @@ public class RegisterActivity extends Activity {
 			}
 		});
 
+		// Event Listener for Register button
 		Button btnRegister = (Button) findViewById(R.id.btnRegister);
 		btnRegister.setOnClickListener(new View.OnClickListener() {
 
@@ -77,28 +75,43 @@ public class RegisterActivity extends Activity {
 				String telephone = txttelephone.getText().toString().trim();
 
 				if ((surname.length() == 0)) {
-					Toast.makeText(RegisterActivity.this,
-							"You need to provide values for SurName",
-							Toast.LENGTH_SHORT).show();
+					SpannableString spannableString = new SpannableString(
+							"You need to provide values for SurName");
+					spannableString.setSpan(
+							new ForegroundColorSpan(getResources().getColor(
+									android.R.color.holo_red_light)), 0,
+							spannableString.length(), 0);
+					Toast.makeText(getBaseContext(), spannableString,
+							Toast.LENGTH_LONG).show();
 					return;
 				}
 
 				if ((email.length() == 0)) {
-					Toast.makeText(RegisterActivity.this,
-							"You need to provide values for Email",
-							Toast.LENGTH_SHORT).show();
+					SpannableString spannableString = new SpannableString(
+							"You need to provide values for Email");
+					spannableString.setSpan(
+							new ForegroundColorSpan(getResources().getColor(
+									android.R.color.holo_red_light)), 0,
+							spannableString.length(), 0);
+					Toast.makeText(getBaseContext(), spannableString,
+							Toast.LENGTH_LONG).show();
 					return;
 				}
 
 				if ((pwd.length() == 0)) {
-					Toast.makeText(RegisterActivity.this,
-							"You need to provide values for Password",
-							Toast.LENGTH_SHORT).show();
+					SpannableString spannableString = new SpannableString(
+							"You need to provide values for Password");
+					spannableString.setSpan(
+							new ForegroundColorSpan(getResources().getColor(
+									android.R.color.holo_red_light)), 0,
+							spannableString.length(), 0);
+					Toast.makeText(getBaseContext(), spannableString,
+							Toast.LENGTH_LONG).show();
 					return;
 				}
 
 				// Go ahead and perform the transaction
-				String[] params = { surname, email, pwd,telephone };
+				String[] params = { surname, email, pwd, telephone };
 				new RegisterAsyncTask(RegisterActivity.this).execute(params);
 
 			}
@@ -125,23 +138,22 @@ public class RegisterActivity extends Activity {
 			Member response = null;
 			Userprofile iresponse = null;
 			try {
-				
-				
+
 				Userprofileendpoint.Builder ibuilder = new Userprofileendpoint.Builder(
 						AndroidHttp.newCompatibleTransport(),
 						new GsonFactory(), null);
 				Userprofileendpoint iservice = ibuilder.build();
 				Userprofile userprofile = new Userprofile();
 				// at this point, fill the member with the details from the UI
-				userprofile.setUserId(params[0]);
-				userprofile.setPassword(params[1]);
+				// userprofile.setUserId(params[0]);
+				// userprofile.setPassword(params[1]);
 				iresponse = iservice.insertUserprofile(userprofile).execute();
-				
+
 				Memberendpoint.Builder builder = new Memberendpoint.Builder(
 						AndroidHttp.newCompatibleTransport(),
 						new GsonFactory(), null);
 				Memberendpoint service = builder.build();
-				Member member = new Member();
+				MemberDTO member = new MemberDTO();
 				// at this point, fill the member with the details from the UI
 				member.setSurname(params[0]);
 				member.setEmail(params[1]);
@@ -149,6 +161,8 @@ public class RegisterActivity extends Activity {
 				member.setTelephone(params[3]);
 
 				response = service.register(member).execute();
+				Log.d("RegisterAsyncTask", "Member registered. Memerid="
+						+ response.getMemberId().toString());
 			} catch (Exception e) {
 				Log.d("Could not Authenticate", e.getMessage(), e);
 			}
@@ -163,17 +177,25 @@ public class RegisterActivity extends Activity {
 			txtpwd.setText("");
 
 			if ((member == null)) {
-				Toast.makeText(
-						RegisterActivity.this,
-						"Registration failed, please Try Again.",
-						Toast.LENGTH_SHORT).show();
+				SpannableString spannableString = new SpannableString(
+						"Registration failed, please Try Again");
+				spannableString.setSpan(new ForegroundColorSpan(getResources()
+						.getColor(android.R.color.holo_red_light)), 0,
+						spannableString.length(), 0);
+				Toast.makeText(getBaseContext(), spannableString,
+						Toast.LENGTH_LONG).show();
 				return;
 			}
 
 			if ((member != null)) {
 				// Display success message to user
-				Toast.makeText(getBaseContext(), "Registration succesfull.",
-						Toast.LENGTH_SHORT).show();
+				SpannableString spannableString = new SpannableString(
+						"Registration succesfull");
+				spannableString.setSpan(new ForegroundColorSpan(getResources()
+						.getColor(android.R.color.holo_blue_light)), 0,
+						spannableString.length(), 0);
+				Toast.makeText(getBaseContext(), spannableString,
+						Toast.LENGTH_LONG).show();
 
 				SharedPreferences settings = getSharedPreferences(
 						REGISTER_PREFERENCES, MODE_PRIVATE);
@@ -187,10 +209,13 @@ public class RegisterActivity extends Activity {
 						.getInvestmentAccount().getAccountID());
 				prefEditor.commit();
 
-				Intent i = new Intent(getApplicationContext(),
-						MainActivity.class);
-				startActivity(i);
-
+				Log.d("RegisterAsyncTask.PostExec",
+						"Saved shared pref, now calling Main");
+				
+				 Intent i = new Intent(getApplicationContext(),
+				 MainActivity.class);
+				 startActivity(i);
+  
 			}
 
 		}
