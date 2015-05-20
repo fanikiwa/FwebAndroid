@@ -105,15 +105,15 @@
                 android:layout_marginBottom="20dip"
                 android:layout_marginTop="5dip"
                 android:singleLine="true"
-                android:textColor="#372c24"  />
+                android:textColor="#372c24" />
 
-           
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
-                
-<!-- Register button Start -->
+
+                <!-- Register button Start -->
+
                 <Button
                     android:id="@+id/btnRegister"
                     android:layout_width="wrap_content"
@@ -121,32 +121,33 @@
                     android:layout_gravity="left"
                     android:layout_weight="1"
                     android:text="@string/register_new_account" />
-<!-- Register button Start -->
+                <!-- Register button Start -->
 
-<!-- Link to Login Screen Start-->
+
+                <!-- Link to Login Screen Start -->
+
                 <Button
-                    android:id="@+id/link_to_login"
+                    android:id="@+id/btnLogin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="1"
-                    android:text="@string/already_has_account_login_here" />
-                <!-- Link to Login Screen Start-->
+                    android:text="@string/register_link" />
+                <!-- Link to Login Screen Start -->
             </LinearLayout>
- 
         </LinearLayout>
         <!-- Registration Form Ends -->
 
 
-        <!-- Footer Start --> 
-<!--         <LinearLayout -->
-<!--             android:id="@+id/footer" -->
-<!--             android:layout_width="wrap_content" -->
-<!--             android:layout_height="wrap_content" -->
-<!--             android:layout_alignParentBottom="true" -->
-<!--             android:background="@layout/footer_repeat" -->
-<!--             android:orientation="horizontal" > -->
-<!--         </LinearLayout> -->
+        <!-- Footer Start -->
+        <!-- <LinearLayout -->
+        <!-- android:id="@+id/footer" -->
+        <!-- android:layout_width="wrap_content" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_alignParentBottom="true" -->
+        <!-- android:background="@layout/footer_repeat" -->
+        <!-- android:orientation="horizontal" > -->
+        <!-- </LinearLayout> -->
         <!-- Footer Ends -->
 
     </RelativeLayout>

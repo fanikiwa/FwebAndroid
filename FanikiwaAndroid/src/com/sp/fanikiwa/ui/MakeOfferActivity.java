@@ -22,8 +22,7 @@ import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.json.gson.GsonFactory;
 import com.sp.fanikiwa.ui.R;
 import com.sp.fanikiwa.entity.offerendpoint.Offerendpoint;
-import com.sp.fanikiwa.entity.offerendpoint.model.Offer;
-import com.sp.fanikiwa.entity.quoteEndpoint.model.Quote;
+import com.sp.fanikiwa.entity.offerendpoint.model.Offer; 
 
 public class MakeOfferActivity extends Activity  {
 
@@ -148,7 +147,8 @@ public class MakeOfferActivity extends Activity  {
 				Offerendpoint service = builder.build();
 				Offer offer = new Offer();
 				offer.setDescription(params[0]);
-				offer.setPublicOffer(params[1]);
+				Boolean privateOffer = Boolean.parseBoolean(params[1]);
+				offer.setPrivateOffer(privateOffer);
 				offer.setOfferType(params[2]);
 				double amount = Double.parseDouble(params[3]);
 				offer.setAmount(amount);
@@ -159,7 +159,7 @@ public class MakeOfferActivity extends Activity  {
 			return response;
 		}
 
-		protected void onPostExecute(Quote quote) {
+		protected void onPostExecute(Offer quote) {
 			// Clear the progress dialog and the fields
 			pd.dismiss();
 			txtDescription.setText("");
