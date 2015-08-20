@@ -22,11 +22,7 @@
 
             <!-- Logo Start -->
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:src="@drawable/fanikiwa_logo" />
+
             <!-- Logo Ends -->
         </LinearLayout>
         <!-- Header Ends -->
@@ -41,22 +37,6 @@
             android:orientation="vertical"
             android:padding="10dip" >
 
-            <!-- Full Name Label -->
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/surname"
-                android:textColor="#372c24" />
-
-            <EditText
-                android:id="@+id/reg_surname"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dip"
-                android:layout_marginTop="5dip"
-                android:singleLine="true"
-                android:textColor="#372c24" />
             <!-- Email Label -->
 
             <TextView
@@ -71,6 +51,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dip"
                 android:layout_marginTop="5dip"
+                android:background="@drawable/edittext_layout"
+                android:gravity="left"
+                android:hint="@string/emailhint"
                 android:singleLine="true"
                 android:textColor="#372c24" />
             <!-- Password Label -->
@@ -86,7 +69,10 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dip"
-                android:password="true"
+                android:background="@drawable/edittext_layout"
+                android:gravity="left"
+                android:hint="@string/password"
+                android:inputType="textPassword"
                 android:singleLine="true"
                 android:textColor="#372c24" />
 
@@ -104,49 +90,77 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dip"
                 android:layout_marginTop="5dip"
+                android:background="@drawable/edittext_layout"
+                android:digits="+1234567890 -"
+                android:gravity="left"
+                android:hint="@string/telephone"
+                android:inputType="phone"
                 android:singleLine="true"
-                android:textColor="#372c24"  />
+                android:textColor="#372c24" />
 
-           
+            <!-- SurName Label -->
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/surname"
+                android:textColor="#372c24" />
+
+            <EditText
+                android:id="@+id/reg_surname"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="5dip"
+                android:background="@drawable/edittext_layout"
+                android:gravity="left"
+                android:hint="@string/surname"
+                android:singleLine="true"
+                android:textColor="#372c24" />
+
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
-                
-<!-- Register button Start -->
+
+                <!-- Register button Start -->
+
                 <Button
                     android:id="@+id/btnRegister"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_weight="1"
+                    android:background="@drawable/selector_button_background"
                     android:text="@string/register_new_account" />
-<!-- Register button Start -->
+                <!-- Register button Start -->
 
-<!-- Link to Login Screen Start-->
+
+                <!-- Link to Login Screen Start -->
+
                 <Button
-                    android:id="@+id/link_to_login"
+                    android:id="@+id/btnLogin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_weight="1"
-                    android:text="@string/already_has_account_login_here" />
-                <!-- Link to Login Screen Start-->
+                    android:background="@drawable/selector_button_background"
+                    android:text="@string/register_link" />
+                <!-- Link to Login Screen Start -->
             </LinearLayout>
- 
         </LinearLayout>
         <!-- Registration Form Ends -->
 
 
-        <!-- Footer Start --> 
-<!--         <LinearLayout -->
-<!--             android:id="@+id/footer" -->
-<!--             android:layout_width="wrap_content" -->
-<!--             android:layout_height="wrap_content" -->
-<!--             android:layout_alignParentBottom="true" -->
-<!--             android:background="@layout/footer_repeat" -->
-<!--             android:orientation="horizontal" > -->
-<!--         </LinearLayout> -->
+        <!-- Footer Start -->
+        <!-- <LinearLayout -->
+        <!-- android:id="@+id/footer" -->
+        <!-- android:layout_width="wrap_content" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_alignParentBottom="true" -->
+        <!-- android:background="@layout/footer_repeat" -->
+        <!-- android:orientation="horizontal" > -->
+        <!-- </LinearLayout> -->
         <!-- Footer Ends -->
 
     </RelativeLayout>
