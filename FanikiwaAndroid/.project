@@ -34,22 +34,22 @@
 		<link>
 			<name>com.sp.fanikiwa.entity.accountendpoint</name>
 			<type>2</type>
-			<location>D:/sp/data/working/eclipse/git/fanikiwa3/Fanikiwa/endpoint-libs/libaccountendpoint-v1/accountendpoint/accountendpoint-v1-generated-source</location>
+			<location>H:/1abcdata/working projects/eclipse/git/fanikiwa3/Fanikiwa/endpoint-libs/libaccountendpoint-v1/accountendpoint/accountendpoint-v1-generated-source</location>
 		</link>
 		<link>
 			<name>com.sp.fanikiwa.entity.memberendpoint</name>
 			<type>2</type>
-			<location>D:/sp/data/working/eclipse/git/fanikiwa3/Fanikiwa/endpoint-libs/libmemberendpoint-v1/memberendpoint/memberendpoint-v1-generated-source</location>
+			<location>H:/1abcdata/working projects/eclipse/git/fanikiwa3/Fanikiwa/endpoint-libs/libmemberendpoint-v1/memberendpoint/memberendpoint-v1-generated-source</location>
 		</link>
 		<link>
 			<name>com.sp.fanikiwa.entity.offerendpoint</name>
 			<type>2</type>
-			<location>D:/sp/data/working/eclipse/git/fanikiwa3/Fanikiwa/endpoint-libs/libofferendpoint-v1/offerendpoint/offerendpoint-v1-generated-source</location>
+			<location>H:/1abcdata/working projects/eclipse/git/fanikiwa3/Fanikiwa/endpoint-libs/libofferendpoint-v1/offerendpoint/offerendpoint-v1-generated-source</location>
 		</link>
 		<link>
 			<name>com.sp.fanikiwa.entity.userprofileendpoint</name>
 			<type>2</type>
-			<location>D:/sp/data/working/eclipse/git/fanikiwa3/Fanikiwa/endpoint-libs/libuserprofileendpoint-v1/userprofileendpoint/userprofileendpoint-v1-generated-source</location>
+			<location>H:/1abcdata/working projects/eclipse/git/fanikiwa3/Fanikiwa/endpoint-libs/libuserprofileendpoint-v1/userprofileendpoint/userprofileendpoint-v1-generated-source</location>
 		</link>
 	</linkedResources>
 </projectDescription>
