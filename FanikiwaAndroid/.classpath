@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="com.sp.fanikiwa.entity.userprofileendpoint"/>
-	<classpathentry kind="src" path="com.sp.fanikiwa.entity.memberendpoint"/>
 	<classpathentry kind="src" path="com.sp.fanikiwa.entity.accountendpoint"/>
+	<classpathentry kind="src" path="com.sp.fanikiwa.entity.memberendpoint"/>
 	<classpathentry kind="src" path="com.sp.fanikiwa.entity.offerendpoint"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
